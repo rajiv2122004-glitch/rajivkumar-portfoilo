@@ -67,6 +67,28 @@ app.get('/api/health', (_req: Request, res: Response) => {
   });
 });
 
+// Public Live Storage Inspection endpoint to make database records and status visible
+app.get('/api/storage/overview', (_req: Request, res: Response) => {
+  const messages = getAllMessages();
+  res.json({
+    engine: 'Persistent Local JSON Database (Firestore Compatible)',
+    storagePath: 'data/contact_messages.json',
+    isPersistent: true,
+    totalRecords: messages.length,
+    unreadRecords: messages.filter((m) => m.status === 'new').length,
+    lastWrite: messages.length > 0 ? messages[0].createdAt : null,
+    records: messages.map((m) => ({
+      id: m.id,
+      name: m.name,
+      email: m.email,
+      company: m.company || 'Direct Inquiry',
+      message: m.message,
+      createdAt: m.createdAt,
+      status: m.status,
+    })),
+  });
+});
+
 // Contact submission endpoint
 app.post('/api/contact', rateLimiter, (req: Request, res: Response) => {
   try {

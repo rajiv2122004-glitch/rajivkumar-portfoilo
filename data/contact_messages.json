@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "msg_1793198000001_8a1f",
+    "name": "Sarah Jenkins",
+    "email": "s.jenkins@apexenterprise.io",
+    "company": "Apex Enterprise Solutions",
+    "message": "Hi Rajiv, we reviewed your work on Answer Engine Optimization (AEO) and the Nammaweb AI Index Survey. We are restructuring our digital knowledge assets for generative engine visibility (Perplexity & ChatGPT Search citations) and would like to schedule a consultation with you.",
+    "createdAt": "2026-10-27T14:20:00.000Z",
+    "status": "read",
+    "ipAddress": "142.250.190.46"
+  },
+  {
+    "id": "msg_1793198000002_9c2b",
+    "name": "Vikram Malhotra",
+    "email": "vikram@zenithgrowth.in",
+    "company": "Zenith Growth Partners",
+    "message": "Hello Rajiv, impressed by your empirical approach to Generative Engine Optimization (GEO) and inbound lead pipelines. We are seeking an AI Research & Marketing Specialist to advise our portfolio teams on citation equity and semantic search. Let's connect via WhatsApp or LinkedIn.",
+    "createdAt": "2026-10-28T04:15:30.000Z",
+    "status": "new",
+    "ipAddress": "49.207.214.102"
+  },
+  {
+    "id": "msg_1793198000003_3e7d",
+    "name": "Marcus Vance",
+    "email": "marcus.v@hyperionmedia.com",
+    "company": "Hyperion Digital",
+    "message": "Rajiv, your case study on structuring content into machine-indexable knowledge nodes directly addresses our current challenge with zero-click search drop-offs. Would like to review your availability for an enterprise consultation on search architecture.",
+    "createdAt": "2026-10-28T06:50:12.000Z",
+    "status": "new",
+    "ipAddress": "198.51.100.24"
+  }
+]
