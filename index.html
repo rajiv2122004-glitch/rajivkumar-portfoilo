@@ -52,10 +52,17 @@
       ]
     }
     </script>
-    <!-- Normalizes GitHub Pages repository trailing slash -->
+    <!-- Normalizes GitHub Pages repository trailing slash and forwards root requests to production /docs/ bundle -->
     <script>
       (function() {
         var path = window.location.pathname;
+        if (window.location.hostname.endsWith('github.io')) {
+          if (!path.includes('/docs')) {
+            var target = path.endsWith('/') ? path + 'docs/' : path + '/docs/';
+            window.location.replace(target + window.location.search + window.location.hash);
+            return;
+          }
+        }
         if (path.length > 1 && !path.endsWith('/') && !path.split('/').pop().includes('.')) {
           window.location.replace(path + '/' + window.location.search + window.location.hash);
         }
