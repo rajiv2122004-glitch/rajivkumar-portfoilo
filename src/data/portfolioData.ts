@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
   linkedinUrl: 'https://www.linkedin.com/in/rajiv-kumar-h-n-a024683b5/',
   youtubeUrl: 'https://www.youtube.com/@Rajiv02-y6s1f',
   location: 'India',
-  portraitImage: '/assets/aistudio/rajiv-office_17269915.jpg',
+  portraitImage: `${import.meta.env.BASE_URL.replace(/\/$/, '')}/assets/aistudio/rajiv-office_17269915.jpg`,
 };
 
 export const CORE_SPECIALIZATIONS = [

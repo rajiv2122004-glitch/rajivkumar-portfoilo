@@ -99,7 +99,8 @@ export const Contact: React.FC = () => {
     setStorageLoading(true);
     try {
       const res = await fetch('/api/storage/overview');
-      if (res.ok) {
+      const contentType = res.headers.get('content-type') || '';
+      if (res.ok && contentType.includes('application/json')) {
         const data = await res.json();
         if (Array.isArray(data.records) && data.records.length > 0) {
           setStoredMessages(data.records);
@@ -113,9 +114,8 @@ export const Contact: React.FC = () => {
           lastWrite: data.lastWrite || new Date().toISOString(),
         });
       }
-    } catch (err) {
-      // In static hosting environments like GitHub Pages, fallback to populated state
-      console.log('Serving client-side persistent storage view');
+    } catch {
+      // Gracefully fall back to seeded records on static hosts (e.g. GitHub Pages)
     } finally {
       setStorageLoading(false);
     }
